@@ -1,0 +1,14 @@
+<div class="container py-5 h-100"  style="text-align: center;" >
+  <h1>To-Do List</h1>
+  <input type="text" [(ngModel)]="newitem" placeholder="Enter a new item " (keypress)="validateInput($event)"> &nbsp;
+  <button class="btn btn-success" (click)="addTodo()">Add Item </button> <br> <br>
+  <ul class="list-group">
+    <li class="list-group-item " *ngFor="let item of arritem; let x = index" >
+      {{ item }} &nbsp;
+      <button class="btn btn-danger" (click)="removeTodo(x)">Remove</button> 
+    </li>
+    <br> <br>
+  </ul>
+</div>
+
+<router-outlet></router-outlet>
